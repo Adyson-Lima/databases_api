@@ -287,69 +287,96 @@ a {
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">GET /api/v1/databases</dt>
-    <script type="text/javascript">moveProgressBar('8.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os databases e retornar status 200?</span><span class='duration'>0.04703s</span></dd>
+    <script type="text/javascript">moveProgressBar('7.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar todos os databases e retornar status 200?</span><span class='duration'>0.04482s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">GET /api/v1/databases/id</dt>
-    <script type="text/javascript">moveProgressBar('16.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue listar um database especifico e retornar status 200?</span><span class='duration'>0.00691s</span></dd>
+    <script type="text/javascript">moveProgressBar('15.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue listar um database especifico e retornar status 200?</span><span class='duration'>0.00728s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_4" class="passed">POST /api/v1/databases</dt>
-    <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue criar um database e retornar status 201?</span><span class='duration'>0.01623s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue criar um database e retornar status 201?</span><span class='duration'>0.01054s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_5" class="passed">PATCH /api/v1/databases/id</dt>
-    <script type="text/javascript">moveProgressBar('33.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um database e retornar status 200?</span><span class='duration'>0.01122s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Consegue atualizar um database e retornar status 200?</span><span class='duration'>0.01128s</span></dd>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_6" class="passed">Testes de verificação de pastas do projeto</dt>
-    <script type="text/javascript">moveProgressBar('41.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.00112s</span></dd>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00086s</span></dd>
-    <script type="text/javascript">moveProgressBar('58.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00100s</span></dd>
-    <script type="text/javascript">moveProgressBar('66.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api/v1 existe?</span><span class='duration'>0.00141s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_6" class="passed">DELETE /api/v1/databases/id</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_6');</script>
+    <script type="text/javascript">makeRed('example_group_6');</script>
+    <script type="text/javascript">moveProgressBar('38.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Consegue excluir um database e retornar status 204?</span>
+      <span class="duration">0.00687s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: delete :destroy, params: {id: database.id}
+
+  AbstractController::ActionNotFound:
+    The action &#39;destroy&#39; could not be found for Api::V1::DatabasesController
+  # ./spec/controllers/databases_controller_v1_spec.rb:43:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/controllers/databases_controller_v1_spec.rb:43:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">41</span>    it 'Consegue excluir um database e retornar status 204?' do
+<span class="linenum">42</span>      database = Database.last
+<span class="offending"><span class="linenum">43</span>      delete :destroy, params: {id: database.id}</span>
+<span class="linenum">44</span>      expect(Database.all).not_to include(database)
+<span class="linenum">45</span>      expect(response).to have_http_status(204)
+<span class="linenum">46</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_7" class="passed">Database</dt>
+  <dt id="example_group_7" class="passed">Testes de verificação de pastas do projeto</dt>
+    <script type="text/javascript">moveProgressBar('46.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.00122s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00103s</span></dd>
+    <script type="text/javascript">moveProgressBar('61.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api existe?</span><span class='duration'>0.00128s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta app/controllers/api/v1 existe?</span><span class='duration'>0.00115s</span></dd>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_8" class="passed">Testes de preenchimento do model Database</dt>
-    <script type="text/javascript">moveProgressBar('75.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00116s</span></dd>
-    <script type="text/javascript">moveProgressBar('83.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">community consegue ser preenchido?</span><span class='duration'>0.00101s</span></dd>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_8" class="passed">Database</dt>
   </dl>
 </div>
 <div id="div_group_9" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_9" class="passed">Testes de validação do model Database</dt>
-    <script type="text/javascript">moveProgressBar('91.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">objeto database valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00149s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">objeto database invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00217s</span></dd>
+  <dt id="example_group_9" class="passed">Testes de preenchimento do model Database</dt>
+    <script type="text/javascript">moveProgressBar('76.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">name consegue ser preenchido?</span><span class='duration'>0.00160s</span></dd>
+    <script type="text/javascript">moveProgressBar('84.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">community consegue ser preenchido?</span><span class='duration'>0.00118s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.10287 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "12 examples, 0 failures";</script>
+<div id="div_group_10" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_10" class="passed">Testes de validação do model Database</dt>
+    <script type="text/javascript">moveProgressBar('92.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">objeto database valido com campos obrigatorios preenchidos?</span><span class='duration'>0.00127s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">objeto database invalido com campos obrigatorios não preenchidos?</span><span class='duration'>0.00215s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.11477 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "13 examples, 1 failure";</script>
 </div>
 </div>
 </body>

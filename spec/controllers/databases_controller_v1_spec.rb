@@ -37,4 +37,13 @@ RSpec.describe Api::V1::DatabasesController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/databases/id' do
+    it 'Consegue excluir um database e retornar status 204?' do
+      database = Database.last
+      delete :destroy, params: {id: database.id}
+      expect(Database.all).not_to include(database)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
