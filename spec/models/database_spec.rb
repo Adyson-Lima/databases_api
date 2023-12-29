@@ -11,6 +11,11 @@ RSpec.describe Database, type: :model do
       expect(@database.name).to eq('postgresql')
     end
 
+    it 'community consegue ser preenchido?' do
+      @database.community = ''
+      expect(@database.community).to eq('postgres')
+    end
+
   end
 
 end
