@@ -12,4 +12,12 @@ RSpec.describe Api::V1::DatabasesController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/databases/id' do
+    it 'Consegue listar um database especifico e retornar status 200?' do
+      get :show, params: {id: @database.id}
+      expect(response.body).to include_json(community: 'sqlite')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
