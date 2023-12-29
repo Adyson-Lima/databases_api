@@ -18,4 +18,13 @@ RSpec.describe Database, type: :model do
 
   end
 
+  describe 'Testes de validação do model Database' do
+
+    it 'objeto database valido com campos obrigatorios preenchidos?' do
+      database = Database.new
+      expect(database).to be_valid
+    end
+
+  end
+
 end
