@@ -7,7 +7,7 @@ RSpec.describe Database, type: :model do
   describe 'Testes de preenchimento do model Database' do
 
     it 'name consegue ser preenchido?' do
-      @database.name = ''
+      @database.name = 'postgresql'
       expect(@database.name).to eq('postgresql')
     end
 
