@@ -28,4 +28,13 @@ RSpec.describe Api::V1::DatabasesController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/databases/id' do
+    it 'Consegue atualizar um database e retornar status 200?' do
+      database = Database.last
+      patch :update, params: {database: {name: 'postgres', community: 'postgres'}, id: database.id}
+      expect(response.body).to include_json(name: 'postgres')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
