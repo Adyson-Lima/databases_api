@@ -20,4 +20,12 @@ RSpec.describe Api::V1::DatabasesController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/databases' do
+    it 'Consegue criar um database e retornar status 201?' do
+      post :create, params: {database: {name: 'mongodb', community: 'mongodb'}, format: :json}
+      expect(response).to include_json(name: 'mongodb')
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
