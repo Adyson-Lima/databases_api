@@ -282,14 +282,44 @@ a {
 <div id="div_group_1" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_1" class="passed">Testes de verificação de pastas do projeto</dt>
-    <script type="text/javascript">moveProgressBar('50.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.00064s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">pasta spec/models existe?</span><span class='duration'>0.00059s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
     <dd class="example passed"><span class="passed_spec_name">pasta spec/controllers existe?</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_1');</script>
+    <script type="text/javascript">makeRed('example_group_1');</script>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">pasta app/controllers/api existe?</span>
+      <span class="duration">0.02057s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(Dir.exist?(&#39;app/controllers/api&#39;)).to eq(true)
+
+    expected: true
+         got: false
+
+    (compared using ==)
+
+    Diff:[0m
+    [0m[34m@@ -1 +1 @@
+    [0m[31m-true
+    [0m[32m+false
+    [0m
+  # ./spec/folders_spec.rb:12:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/folders_spec.rb:12:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">10</span>
+<span class="linenum">11</span>  it 'pasta app/controllers/api existe?' do
+<span class="offending"><span class="linenum">12</span>    expect(Dir.exist?('app/controllers/api')).to eq(true)</span>
+<span class="linenum">13</span>  end
+<span class="linenum">14</span>
+<span class="linenum">15</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.00222 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "2 examples, 0 failures";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.04567 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "3 examples, 1 failure";</script>
 </div>
 </div>
 </body>
