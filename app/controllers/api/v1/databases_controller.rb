@@ -1,6 +1,6 @@
 class Api::V1::DatabasesController < ApplicationController
 
-  before_action :set_database, only: %i[show update] # show update destroy
+  before_action :set_database, only: %i[show update destroy] # show update destroy
 
   def index
     @databases = Database.all 
@@ -26,6 +26,10 @@ class Api::V1::DatabasesController < ApplicationController
     else
       render json: @database.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @database.destroy!
   end
 
 private
