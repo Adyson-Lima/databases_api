@@ -26,6 +26,11 @@ RSpec.describe Database, type: :model do
       expect(@database).to be_valid
     end
 
+    it 'objeto database invalido com campos obrigatorios não preenchidos?' do
+      database = Database.new
+      expect(database).to be_valid
+    end
+
   end
 
 end
